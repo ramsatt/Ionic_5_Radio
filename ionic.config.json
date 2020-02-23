@@ -1,0 +1,7 @@
+{
+  "name": "RamsattRadio",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

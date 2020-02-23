@@ -1,0 +1,92 @@
+<ion-content [fullscreen]="true">
+  <div class="player">
+    <div class="cover"  [style.background-image]="getBackground(selectedStation.cover)"></div>
+    <nav>
+      <div class="left">
+        <h6>Tamil Radio</h6>
+      </div>
+      <div class="right">
+        <i class="material-icons">queue_music</i>
+      </div>
+    </nav>
+    <div class="player-ui">
+      <div class="title">
+        <h3>{{selectedStation.name}}</h3>
+      </div>
+      <div class="small">
+        <i class="material-icons">replay</i>
+        <p align="center">{{selectedStation.artist}}</p>
+        <i class="material-icons">volume_up</i>
+      </div>
+      <div class='container'>
+        <div class='bar'></div>
+        <div class='bar'></div>
+        <div class='bar'></div>
+        <div class='bar'></div>
+        <div class='bar'></div>
+        <div class='bar'></div>
+        <div class='bar'></div>
+        <div class='bar'></div>
+        <div class='bar'></div>
+        <div class='bar'></div>
+        <div class='bar'></div>
+        <div class='bar'></div>
+        <div class='bar'></div>
+        <div class='bar'></div>
+        <div class='bar'></div>
+        <div class='bar'></div>
+        <div class='bar'></div>
+        <div class='bar'></div>
+        <div class='bar'></div>
+        <div class='bar'></div>
+      </div>
+
+      <div class="controls">
+        <i class="material-icons">skip_previous</i>
+        <i class="material-icons" *ngIf="!player" (click)="play(selectedStation)">play_arrow</i>
+        <i class="material-icons" *ngIf="player" (click)="stop()">pause</i>
+        <i class="material-icons" (click)="next()">skip_next</i>
+      </div>
+    </div>
+    <div class="music">
+      <div class="song-1" *ngFor="let track of radioList" (click)="selectedTrack(track)">
+        <div class="info">
+          <div class="img" [style.background]="'url(./assets/img/icons/' + track.icon + ')'"></div>
+          <div class="titles">
+            <h5>{{track.name}}</h5>
+            <p>{{track.artist}}</p>
+          </div>
+        </div>
+        <div class="state playing" *ngIf="selectedStation !== track">
+          <i class="material-icons">play_arrow</i>
+        </div>
+        <div class="state playing" *ngIf="selectedStation === track">
+          <div class="loader loader--style4" title="3">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 width="24px" height="24px" viewBox="0 0 24 24" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+    <rect x="0" y="0" width="4" height="7" fill="#333">
+      <animateTransform  attributeType="xml"
+                         attributeName="transform" type="scale"
+                         values="1,1; 1,3; 1,1"
+                         begin="0s" dur="0.6s" repeatCount="indefinite" />
+    </rect>
+
+              <rect x="10" y="0" width="4" height="7" fill="#333">
+      <animateTransform  attributeType="xml"
+                         attributeName="transform" type="scale"
+                         values="1,1; 1,3; 1,1"
+                         begin="0.2s" dur="0.6s" repeatCount="indefinite" />
+    </rect>
+              <rect x="20" y="0" width="4" height="7" fill="#333">
+      <animateTransform  attributeType="xml"
+                         attributeName="transform" type="scale"
+                         values="1,1; 1,3; 1,1"
+                         begin="0.4s" dur="0.6s" repeatCount="indefinite" />
+    </rect>
+  </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

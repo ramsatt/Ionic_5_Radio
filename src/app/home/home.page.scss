@@ -1,0 +1,1902 @@
+$primary: #F44336;
+$secondary: #03A9F4;
+
+body {
+  margin: 0;
+  height: 100%;
+  align-items: center;
+  color: #333;
+  font-family: "Roboto",sans-serif;
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1em;
+}
+
+body {
+  background: #e9e9e9;
+  display: flex;
+  justify-content: center;
+}
+
+* {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+i {
+  cursor: pointer;
+}
+
+.player {
+  overflow: hidden;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.6);
+  position: relative;
+  width: 100%;
+  height: 100VH;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  .cover {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 335px;
+    background-size: cover;
+  }
+  nav {
+    margin-top: 5px;
+    position: relative;
+    z-index: 3;
+    min-height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 15px;
+
+    .left {
+      display: flex;
+
+      i {
+        cursor: pointer;
+        color: white;
+      }
+
+      h6 {
+        margin: 0;
+        padding-left: 5px;
+        color: white;
+        font-size: 26px;
+        line-height: 1.38;
+      }
+    }
+
+    .right {
+      display: flex;
+
+      i {
+        cursor: pointer;
+        color: white;
+      }
+
+      .search {
+        padding-right: 10px;
+      }
+    }
+  }
+
+  .player-ui {
+    position: relative;
+    z-index: 3;
+    padding-top: 10px;
+
+    .title {
+      display: flex;
+      justify-content: center;
+
+      h3 {
+        margin: 0;
+        color: white;
+        font-size: 36px;
+        font-weight: 100;
+      }
+    }
+
+    .small {
+      padding: 15px 35px 0px 35px;
+      display: flex;
+      justify-content: space-between;
+
+      p, i {
+        margin: 0;
+        color: white;
+        font-size: 14px;
+      }
+
+      p {
+        color: #ddd;
+      }
+
+      i {
+        font-size: 16px;
+      }
+    }
+
+    .progress {
+      position: relative;
+      height: 2px;
+      margin: 30px 20px 0px 20px;
+      background: rgba(255, 255, 255, 0.3);
+
+      .played {
+        width: 20%;
+        height: 2px;
+        position: absolute;
+        background: $primary;
+
+        .circle {
+          width: 10px;
+          height: 10px;
+          background: $primary;
+          border-radius: 50%;
+          margin-left: 52px;
+          margin-top: -4px;
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+        }
+      }
+    }
+
+    .controls {
+      display: flex;
+      justify-content: space-between;
+      padding: 25px 50px 0px 50px;
+
+      i {
+        color: white;
+        font-size: 32px;
+      }
+    }
+  }
+
+  .btn {
+    margin-left: auto;
+    margin-right: 10px;
+    // box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 4;
+    margin-top: 20px;
+    width: 40px;
+    height: 40px;
+    // background: $secondary;
+    border-radius: 50%;
+
+    i {
+      font-size: 28px;
+      color: white;
+    }
+  }
+
+  .music {
+    padding: 10px 20px 0px 20px;
+    background: #1A1B1E;
+    margin-top: 0px;
+    overflow: scroll !important;
+    height: 100VH;
+
+    .song-1, .song-2, .song-3, .song-4 {
+      height: 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255 , 255, 255, 0.2);
+
+      .info {
+        display: flex;
+        align-items: center;
+
+        .img {
+          width: 60px;
+          height: 60px;
+          background: red;
+          margin-right: 10px;
+          background-size: contain !important;
+        }
+
+        .img.first {
+          background: url(http://static.stereogum.com/blogs.dir/2/files/2011/12/Adele-21.jpg) center center;
+          background-size: cover;
+        }
+
+        .img.second {
+          background: url(https://upload.wikimedia.org/wikipedia/en/d/df/RedHotChiliPeppersCalifornication.jpg) center center;
+          background-size: cover;
+        }
+
+        .img.third {
+          background: url(http://images.rapgenius.com/59fc635f7dbe6b5cd1e07e5e605c96b5.640x640x1.jpg) center center;
+          background-size: cover;
+        }
+
+        .img.fourth {
+          background: url(http://djrichiep.us/wp-content/uploads/2014/06/princelgc7F.jpg) center center;
+          background-size: cover;
+        }
+
+        .titles {
+
+          h5, p {
+            margin: 0;
+            color: white;
+          }
+
+          h5 {
+            font-size: 17px;
+            font-weight: 400;
+            margin-bottom: 7px;
+          }
+
+          p {
+            font-size: 13px;
+            color: #929292;
+          }
+        }
+      }
+
+      .state.playing {
+
+        i {
+          color: $primary;
+        }
+      }
+
+      .state {
+
+        i {
+          color: #ddd;
+        }
+      }
+    }
+  }
+}
+
+svg path,
+svg rect{
+  fill: #FF6700;
+}
+
+.container {
+  margin: 0px auto 0;
+  width:95%;
+  height: 130px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: end;
+  align-items: flex-end;
+}
+
+.bar {
+  width: 20px;
+  min-height: 10px;
+  margin-right: 1px;
+  box-shadow: 0 10px 15px #000;
+}
+
+.bar:nth-child(0) {
+  background-color: #f90606;
+  -webkit-animation: grow0 1808ms alternate infinite;
+  animation: grow0 1808ms alternate infinite;
+}
+
+@-webkit-keyframes grow0 {
+  0% {
+    height: 35px;
+  }
+  10% {
+    height: 98px;
+  }
+  20% {
+    height: 38px;
+  }
+  30% {
+    height: 88px;
+  }
+  40% {
+    height: 13px;
+  }
+  50% {
+    height: 12px;
+  }
+  60% {
+    height: 37px;
+  }
+  70% {
+    height: 71px;
+  }
+  80% {
+    height: 64px;
+  }
+  90% {
+    height: 73px;
+  }
+  100% {
+    height: 75px;
+  }
+}
+
+@keyframes grow0 {
+  0% {
+    height: 35px;
+  }
+  10% {
+    height: 98px;
+  }
+  20% {
+    height: 38px;
+  }
+  30% {
+    height: 88px;
+  }
+  40% {
+    height: 13px;
+  }
+  50% {
+    height: 12px;
+  }
+  60% {
+    height: 37px;
+  }
+  70% {
+    height: 71px;
+  }
+  80% {
+    height: 64px;
+  }
+  90% {
+    height: 73px;
+  }
+  100% {
+    height: 75px;
+  }
+}
+.bar:nth-child(1) {
+  background-color: #f20d0d;
+  -webkit-animation: grow1 1622ms alternate infinite;
+  animation: grow1 1622ms alternate infinite;
+}
+
+@-webkit-keyframes grow1 {
+  0% {
+    height: 61px;
+  }
+  10% {
+    height: 80px;
+  }
+  20% {
+    height: 100px;
+  }
+  30% {
+    height: 22px;
+  }
+  40% {
+    height: 40px;
+  }
+  50% {
+    height: 4px;
+  }
+  60% {
+    height: 46px;
+  }
+  70% {
+    height: 2px;
+  }
+  80% {
+    height: 51px;
+  }
+  90% {
+    height: 22px;
+  }
+  100% {
+    height: 67px;
+  }
+}
+
+@keyframes grow1 {
+  0% {
+    height: 61px;
+  }
+  10% {
+    height: 80px;
+  }
+  20% {
+    height: 100px;
+  }
+  30% {
+    height: 22px;
+  }
+  40% {
+    height: 40px;
+  }
+  50% {
+    height: 4px;
+  }
+  60% {
+    height: 46px;
+  }
+  70% {
+    height: 2px;
+  }
+  80% {
+    height: 51px;
+  }
+  90% {
+    height: 22px;
+  }
+  100% {
+    height: 67px;
+  }
+}
+.bar:nth-child(2) {
+  background-color: #ec1313;
+  -webkit-animation: grow2 1820ms alternate infinite;
+  animation: grow2 1820ms alternate infinite;
+}
+
+@-webkit-keyframes grow2 {
+  0% {
+    height: 76px;
+  }
+  10% {
+    height: 59px;
+  }
+  20% {
+    height: 99px;
+  }
+  30% {
+    height: 60px;
+  }
+  40% {
+    height: 26px;
+  }
+  50% {
+    height: 98px;
+  }
+  60% {
+    height: 58px;
+  }
+  70% {
+    height: 45px;
+  }
+  80% {
+    height: 76px;
+  }
+  90% {
+    height: 83px;
+  }
+  100% {
+    height: 1px;
+  }
+}
+
+@keyframes grow2 {
+  0% {
+    height: 76px;
+  }
+  10% {
+    height: 59px;
+  }
+  20% {
+    height: 99px;
+  }
+  30% {
+    height: 60px;
+  }
+  40% {
+    height: 26px;
+  }
+  50% {
+    height: 98px;
+  }
+  60% {
+    height: 58px;
+  }
+  70% {
+    height: 45px;
+  }
+  80% {
+    height: 76px;
+  }
+  90% {
+    height: 83px;
+  }
+  100% {
+    height: 1px;
+  }
+}
+.bar:nth-child(3) {
+  background-color: #e61a1a;
+  -webkit-animation: grow3 1843ms alternate infinite;
+  animation: grow3 1843ms alternate infinite;
+}
+
+@-webkit-keyframes grow3 {
+  0% {
+    height: 87px;
+  }
+  10% {
+    height: 29px;
+  }
+  20% {
+    height: 61px;
+  }
+  30% {
+    height: 62px;
+  }
+  40% {
+    height: 78px;
+  }
+  50% {
+    height: 15px;
+  }
+  60% {
+    height: 60px;
+  }
+  70% {
+    height: 61px;
+  }
+  80% {
+    height: 26px;
+  }
+  90% {
+    height: 83px;
+  }
+  100% {
+    height: 77px;
+  }
+}
+
+@keyframes grow3 {
+  0% {
+    height: 87px;
+  }
+  10% {
+    height: 29px;
+  }
+  20% {
+    height: 61px;
+  }
+  30% {
+    height: 62px;
+  }
+  40% {
+    height: 78px;
+  }
+  50% {
+    height: 15px;
+  }
+  60% {
+    height: 60px;
+  }
+  70% {
+    height: 61px;
+  }
+  80% {
+    height: 26px;
+  }
+  90% {
+    height: 83px;
+  }
+  100% {
+    height: 77px;
+  }
+}
+.bar:nth-child(4) {
+  background-color: #df2020;
+  -webkit-animation: grow4 1503ms alternate infinite;
+  animation: grow4 1503ms alternate infinite;
+}
+
+@-webkit-keyframes grow4 {
+  0% {
+    height: 42px;
+  }
+  10% {
+    height: 24px;
+  }
+  20% {
+    height: 8px;
+  }
+  30% {
+    height: 88px;
+  }
+  40% {
+    height: 73px;
+  }
+  50% {
+    height: 50px;
+  }
+  60% {
+    height: 52px;
+  }
+  70% {
+    height: 55px;
+  }
+  80% {
+    height: 36px;
+  }
+  90% {
+    height: 55px;
+  }
+  100% {
+    height: 24px;
+  }
+}
+
+@keyframes grow4 {
+  0% {
+    height: 42px;
+  }
+  10% {
+    height: 24px;
+  }
+  20% {
+    height: 8px;
+  }
+  30% {
+    height: 88px;
+  }
+  40% {
+    height: 73px;
+  }
+  50% {
+    height: 50px;
+  }
+  60% {
+    height: 52px;
+  }
+  70% {
+    height: 55px;
+  }
+  80% {
+    height: 36px;
+  }
+  90% {
+    height: 55px;
+  }
+  100% {
+    height: 24px;
+  }
+}
+.bar:nth-child(5) {
+  background-color: #d92626;
+  -webkit-animation: grow5 1502ms alternate infinite;
+  animation: grow5 1502ms alternate infinite;
+}
+
+@-webkit-keyframes grow5 {
+  0% {
+    height: 89px;
+  }
+  10% {
+    height: 5px;
+  }
+  20% {
+    height: 22px;
+  }
+  30% {
+    height: 57px;
+  }
+  40% {
+    height: 18px;
+  }
+  50% {
+    height: 69px;
+  }
+  60% {
+    height: 47px;
+  }
+  70% {
+    height: 66px;
+  }
+  80% {
+    height: 80px;
+  }
+  90% {
+    height: 93px;
+  }
+  100% {
+    height: 78px;
+  }
+}
+
+@keyframes grow5 {
+  0% {
+    height: 89px;
+  }
+  10% {
+    height: 5px;
+  }
+  20% {
+    height: 22px;
+  }
+  30% {
+    height: 57px;
+  }
+  40% {
+    height: 18px;
+  }
+  50% {
+    height: 69px;
+  }
+  60% {
+    height: 47px;
+  }
+  70% {
+    height: 66px;
+  }
+  80% {
+    height: 80px;
+  }
+  90% {
+    height: 93px;
+  }
+  100% {
+    height: 78px;
+  }
+}
+.bar:nth-child(6) {
+  background-color: #d22d2d;
+  -webkit-animation: grow6 1722ms alternate infinite;
+  animation: grow6 1722ms alternate infinite;
+}
+
+@-webkit-keyframes grow6 {
+  0% {
+    height: 56px;
+  }
+  10% {
+    height: 35px;
+  }
+  20% {
+    height: 83px;
+  }
+  30% {
+    height: 94px;
+  }
+  40% {
+    height: 37px;
+  }
+  50% {
+    height: 22px;
+  }
+  60% {
+    height: 90px;
+  }
+  70% {
+    height: 62px;
+  }
+  80% {
+    height: 90px;
+  }
+  90% {
+    height: 47px;
+  }
+  100% {
+    height: 93px;
+  }
+}
+
+@keyframes grow6 {
+  0% {
+    height: 56px;
+  }
+  10% {
+    height: 35px;
+  }
+  20% {
+    height: 83px;
+  }
+  30% {
+    height: 94px;
+  }
+  40% {
+    height: 37px;
+  }
+  50% {
+    height: 22px;
+  }
+  60% {
+    height: 90px;
+  }
+  70% {
+    height: 62px;
+  }
+  80% {
+    height: 90px;
+  }
+  90% {
+    height: 47px;
+  }
+  100% {
+    height: 93px;
+  }
+}
+.bar:nth-child(7) {
+  background-color: #cc3333;
+  -webkit-animation: grow7 2057ms alternate infinite;
+  animation: grow7 2057ms alternate infinite;
+}
+
+@-webkit-keyframes grow7 {
+  0% {
+    height: 99px;
+  }
+  10% {
+    height: 15px;
+  }
+  20% {
+    height: 67px;
+  }
+  30% {
+    height: 72px;
+  }
+  40% {
+    height: 86px;
+  }
+  50% {
+    height: 51px;
+  }
+  60% {
+    height: 84px;
+  }
+  70% {
+    height: 75px;
+  }
+  80% {
+    height: 32px;
+  }
+  90% {
+    height: 78px;
+  }
+  100% {
+    height: 97px;
+  }
+}
+
+@keyframes grow7 {
+  0% {
+    height: 99px;
+  }
+  10% {
+    height: 15px;
+  }
+  20% {
+    height: 67px;
+  }
+  30% {
+    height: 72px;
+  }
+  40% {
+    height: 86px;
+  }
+  50% {
+    height: 51px;
+  }
+  60% {
+    height: 84px;
+  }
+  70% {
+    height: 75px;
+  }
+  80% {
+    height: 32px;
+  }
+  90% {
+    height: 78px;
+  }
+  100% {
+    height: 97px;
+  }
+}
+.bar:nth-child(8) {
+  background-color: #c63939;
+  -webkit-animation: grow8 1678ms alternate infinite;
+  animation: grow8 1678ms alternate infinite;
+}
+
+@-webkit-keyframes grow8 {
+  0% {
+    height: 88px;
+  }
+  10% {
+    height: 65px;
+  }
+  20% {
+    height: 95px;
+  }
+  30% {
+    height: 94px;
+  }
+  40% {
+    height: 40px;
+  }
+  50% {
+    height: 21px;
+  }
+  60% {
+    height: 10px;
+  }
+  70% {
+    height: 21px;
+  }
+  80% {
+    height: 86px;
+  }
+  90% {
+    height: 11px;
+  }
+  100% {
+    height: 11px;
+  }
+}
+
+@keyframes grow8 {
+  0% {
+    height: 88px;
+  }
+  10% {
+    height: 65px;
+  }
+  20% {
+    height: 95px;
+  }
+  30% {
+    height: 94px;
+  }
+  40% {
+    height: 40px;
+  }
+  50% {
+    height: 21px;
+  }
+  60% {
+    height: 10px;
+  }
+  70% {
+    height: 21px;
+  }
+  80% {
+    height: 86px;
+  }
+  90% {
+    height: 11px;
+  }
+  100% {
+    height: 11px;
+  }
+}
+.bar:nth-child(9) {
+  background-color: #bf4040;
+  -webkit-animation: grow9 1720ms alternate infinite;
+  animation: grow9 1720ms alternate infinite;
+}
+
+@-webkit-keyframes grow9 {
+  0% {
+    height: 34px;
+  }
+  10% {
+    height: 90px;
+  }
+  20% {
+    height: 52px;
+  }
+  30% {
+    height: 5px;
+  }
+  40% {
+    height: 46px;
+  }
+  50% {
+    height: 77px;
+  }
+  60% {
+    height: 26px;
+  }
+  70% {
+    height: 52px;
+  }
+  80% {
+    height: 62px;
+  }
+  90% {
+    height: 73px;
+  }
+  100% {
+    height: 70px;
+  }
+}
+
+@keyframes grow9 {
+  0% {
+    height: 34px;
+  }
+  10% {
+    height: 90px;
+  }
+  20% {
+    height: 52px;
+  }
+  30% {
+    height: 5px;
+  }
+  40% {
+    height: 46px;
+  }
+  50% {
+    height: 77px;
+  }
+  60% {
+    height: 26px;
+  }
+  70% {
+    height: 52px;
+  }
+  80% {
+    height: 62px;
+  }
+  90% {
+    height: 73px;
+  }
+  100% {
+    height: 70px;
+  }
+}
+.bar:nth-child(10) {
+  background-color: #b94646;
+  -webkit-animation: grow10 1596ms alternate infinite;
+  animation: grow10 1596ms alternate infinite;
+}
+
+@-webkit-keyframes grow10 {
+  0% {
+    height: 61px;
+  }
+  10% {
+    height: 16px;
+  }
+  20% {
+    height: 12px;
+  }
+  30% {
+    height: 30px;
+  }
+  40% {
+    height: 19px;
+  }
+  50% {
+    height: 44px;
+  }
+  60% {
+    height: 82px;
+  }
+  70% {
+    height: 62px;
+  }
+  80% {
+    height: 47px;
+  }
+  90% {
+    height: 80px;
+  }
+  100% {
+    height: 1px;
+  }
+}
+
+@keyframes grow10 {
+  0% {
+    height: 61px;
+  }
+  10% {
+    height: 16px;
+  }
+  20% {
+    height: 12px;
+  }
+  30% {
+    height: 30px;
+  }
+  40% {
+    height: 19px;
+  }
+  50% {
+    height: 44px;
+  }
+  60% {
+    height: 82px;
+  }
+  70% {
+    height: 62px;
+  }
+  80% {
+    height: 47px;
+  }
+  90% {
+    height: 80px;
+  }
+  100% {
+    height: 1px;
+  }
+}
+.bar:nth-child(11) {
+  background-color: #b34d4d;
+  -webkit-animation: grow11 1692ms alternate infinite;
+  animation: grow11 1692ms alternate infinite;
+}
+
+@-webkit-keyframes grow11 {
+  0% {
+    height: 45px;
+  }
+  10% {
+    height: 62px;
+  }
+  20% {
+    height: 74px;
+  }
+  30% {
+    height: 14px;
+  }
+  40% {
+    height: 53px;
+  }
+  50% {
+    height: 34px;
+  }
+  60% {
+    height: 60px;
+  }
+  70% {
+    height: 31px;
+  }
+  80% {
+    height: 100px;
+  }
+  90% {
+    height: 26px;
+  }
+  100% {
+    height: 28px;
+  }
+}
+
+@keyframes grow11 {
+  0% {
+    height: 45px;
+  }
+  10% {
+    height: 62px;
+  }
+  20% {
+    height: 74px;
+  }
+  30% {
+    height: 14px;
+  }
+  40% {
+    height: 53px;
+  }
+  50% {
+    height: 34px;
+  }
+  60% {
+    height: 60px;
+  }
+  70% {
+    height: 31px;
+  }
+  80% {
+    height: 100px;
+  }
+  90% {
+    height: 26px;
+  }
+  100% {
+    height: 28px;
+  }
+}
+.bar:nth-child(12) {
+  background-color: #ac5353;
+  -webkit-animation: grow12 1772ms alternate infinite;
+  animation: grow12 1772ms alternate infinite;
+}
+
+@-webkit-keyframes grow12 {
+  0% {
+    height: 8px;
+  }
+  10% {
+    height: 18px;
+  }
+  20% {
+    height: 97px;
+  }
+  30% {
+    height: 33px;
+  }
+  40% {
+    height: 82px;
+  }
+  50% {
+    height: 36px;
+  }
+  60% {
+    height: 84px;
+  }
+  70% {
+    height: 43px;
+  }
+  80% {
+    height: 70px;
+  }
+  90% {
+    height: 18px;
+  }
+  100% {
+    height: 99px;
+  }
+}
+
+@keyframes grow12 {
+  0% {
+    height: 8px;
+  }
+  10% {
+    height: 18px;
+  }
+  20% {
+    height: 97px;
+  }
+  30% {
+    height: 33px;
+  }
+  40% {
+    height: 82px;
+  }
+  50% {
+    height: 36px;
+  }
+  60% {
+    height: 84px;
+  }
+  70% {
+    height: 43px;
+  }
+  80% {
+    height: 70px;
+  }
+  90% {
+    height: 18px;
+  }
+  100% {
+    height: 99px;
+  }
+}
+.bar:nth-child(13) {
+  background-color: #a65959;
+  -webkit-animation: grow13 2177ms alternate infinite;
+  animation: grow13 2177ms alternate infinite;
+}
+
+@-webkit-keyframes grow13 {
+  0% {
+    height: 75px;
+  }
+  10% {
+    height: 87px;
+  }
+  20% {
+    height: 32px;
+  }
+  30% {
+    height: 91px;
+  }
+  40% {
+    height: 26px;
+  }
+  50% {
+    height: 25px;
+  }
+  60% {
+    height: 49px;
+  }
+  70% {
+    height: 8px;
+  }
+  80% {
+    height: 26px;
+  }
+  90% {
+    height: 80px;
+  }
+  100% {
+    height: 91px;
+  }
+}
+
+@keyframes grow13 {
+  0% {
+    height: 75px;
+  }
+  10% {
+    height: 87px;
+  }
+  20% {
+    height: 32px;
+  }
+  30% {
+    height: 91px;
+  }
+  40% {
+    height: 26px;
+  }
+  50% {
+    height: 25px;
+  }
+  60% {
+    height: 49px;
+  }
+  70% {
+    height: 8px;
+  }
+  80% {
+    height: 26px;
+  }
+  90% {
+    height: 80px;
+  }
+  100% {
+    height: 91px;
+  }
+}
+.bar:nth-child(14) {
+  background-color: #9f6060;
+  -webkit-animation: grow14 1596ms alternate infinite;
+  animation: grow14 1596ms alternate infinite;
+}
+
+@-webkit-keyframes grow14 {
+  0% {
+    height: 1px;
+  }
+  10% {
+    height: 64px;
+  }
+  20% {
+    height: 47px;
+  }
+  30% {
+    height: 25px;
+  }
+  40% {
+    height: 7px;
+  }
+  50% {
+    height: 98px;
+  }
+  60% {
+    height: 67px;
+  }
+  70% {
+    height: 89px;
+  }
+  80% {
+    height: 84px;
+  }
+  90% {
+    height: 19px;
+  }
+  100% {
+    height: 91px;
+  }
+}
+
+@keyframes grow14 {
+  0% {
+    height: 1px;
+  }
+  10% {
+    height: 64px;
+  }
+  20% {
+    height: 47px;
+  }
+  30% {
+    height: 25px;
+  }
+  40% {
+    height: 7px;
+  }
+  50% {
+    height: 98px;
+  }
+  60% {
+    height: 67px;
+  }
+  70% {
+    height: 89px;
+  }
+  80% {
+    height: 84px;
+  }
+  90% {
+    height: 19px;
+  }
+  100% {
+    height: 91px;
+  }
+}
+.bar:nth-child(15) {
+  background-color: #996666;
+  -webkit-animation: grow15 2193ms alternate infinite;
+  animation: grow15 2193ms alternate infinite;
+}
+
+@-webkit-keyframes grow15 {
+  0% {
+    height: 48px;
+  }
+  10% {
+    height: 32px;
+  }
+  20% {
+    height: 16px;
+  }
+  30% {
+    height: 71px;
+  }
+  40% {
+    height: 57px;
+  }
+  50% {
+    height: 18px;
+  }
+  60% {
+    height: 88px;
+  }
+  70% {
+    height: 1px;
+  }
+  80% {
+    height: 66px;
+  }
+  90% {
+    height: 62px;
+  }
+  100% {
+    height: 95px;
+  }
+}
+
+@keyframes grow15 {
+  0% {
+    height: 48px;
+  }
+  10% {
+    height: 32px;
+  }
+  20% {
+    height: 16px;
+  }
+  30% {
+    height: 71px;
+  }
+  40% {
+    height: 57px;
+  }
+  50% {
+    height: 18px;
+  }
+  60% {
+    height: 88px;
+  }
+  70% {
+    height: 1px;
+  }
+  80% {
+    height: 66px;
+  }
+  90% {
+    height: 62px;
+  }
+  100% {
+    height: 95px;
+  }
+}
+.bar:nth-child(16) {
+  background-color: #936c6c;
+  -webkit-animation: grow16 1927ms alternate infinite;
+  animation: grow16 1927ms alternate infinite;
+}
+
+@-webkit-keyframes grow16 {
+  0% {
+    height: 94px;
+  }
+  10% {
+    height: 16px;
+  }
+  20% {
+    height: 70px;
+  }
+  30% {
+    height: 17px;
+  }
+  40% {
+    height: 61px;
+  }
+  50% {
+    height: 19px;
+  }
+  60% {
+    height: 11px;
+  }
+  70% {
+    height: 60px;
+  }
+  80% {
+    height: 71px;
+  }
+  90% {
+    height: 88px;
+  }
+  100% {
+    height: 54px;
+  }
+}
+
+@keyframes grow16 {
+  0% {
+    height: 94px;
+  }
+  10% {
+    height: 16px;
+  }
+  20% {
+    height: 70px;
+  }
+  30% {
+    height: 17px;
+  }
+  40% {
+    height: 61px;
+  }
+  50% {
+    height: 19px;
+  }
+  60% {
+    height: 11px;
+  }
+  70% {
+    height: 60px;
+  }
+  80% {
+    height: 71px;
+  }
+  90% {
+    height: 88px;
+  }
+  100% {
+    height: 54px;
+  }
+}
+.bar:nth-child(17) {
+  background-color: #8c7373;
+  -webkit-animation: grow17 1962ms alternate infinite;
+  animation: grow17 1962ms alternate infinite;
+}
+
+@-webkit-keyframes grow17 {
+  0% {
+    height: 5px;
+  }
+  10% {
+    height: 58px;
+  }
+  20% {
+    height: 68px;
+  }
+  30% {
+    height: 82px;
+  }
+  40% {
+    height: 5px;
+  }
+  50% {
+    height: 55px;
+  }
+  60% {
+    height: 26px;
+  }
+  70% {
+    height: 46px;
+  }
+  80% {
+    height: 41px;
+  }
+  90% {
+    height: 46px;
+  }
+  100% {
+    height: 57px;
+  }
+}
+
+@keyframes grow17 {
+  0% {
+    height: 5px;
+  }
+  10% {
+    height: 58px;
+  }
+  20% {
+    height: 68px;
+  }
+  30% {
+    height: 82px;
+  }
+  40% {
+    height: 5px;
+  }
+  50% {
+    height: 55px;
+  }
+  60% {
+    height: 26px;
+  }
+  70% {
+    height: 46px;
+  }
+  80% {
+    height: 41px;
+  }
+  90% {
+    height: 46px;
+  }
+  100% {
+    height: 57px;
+  }
+}
+.bar:nth-child(18) {
+  background-color: #867979;
+  -webkit-animation: grow18 1552ms alternate infinite;
+  animation: grow18 1552ms alternate infinite;
+}
+
+@-webkit-keyframes grow18 {
+  0% {
+    height: 6px;
+  }
+  10% {
+    height: 20px;
+  }
+  20% {
+    height: 15px;
+  }
+  30% {
+    height: 90px;
+  }
+  40% {
+    height: 9px;
+  }
+  50% {
+    height: 4px;
+  }
+  60% {
+    height: 5px;
+  }
+  70% {
+    height: 71px;
+  }
+  80% {
+    height: 49px;
+  }
+  90% {
+    height: 46px;
+  }
+  100% {
+    height: 77px;
+  }
+}
+
+@keyframes grow18 {
+  0% {
+    height: 6px;
+  }
+  10% {
+    height: 20px;
+  }
+  20% {
+    height: 15px;
+  }
+  30% {
+    height: 90px;
+  }
+  40% {
+    height: 9px;
+  }
+  50% {
+    height: 4px;
+  }
+  60% {
+    height: 5px;
+  }
+  70% {
+    height: 71px;
+  }
+  80% {
+    height: 49px;
+  }
+  90% {
+    height: 46px;
+  }
+  100% {
+    height: 77px;
+  }
+}
+.bar:nth-child(19) {
+  background-color: gray;
+  -webkit-animation: grow19 1524ms alternate infinite;
+  animation: grow19 1524ms alternate infinite;
+}
+
+@-webkit-keyframes grow19 {
+  0% {
+    height: 19px;
+  }
+  10% {
+    height: 47px;
+  }
+  20% {
+    height: 98px;
+  }
+  30% {
+    height: 57px;
+  }
+  40% {
+    height: 5px;
+  }
+  50% {
+    height: 1px;
+  }
+  60% {
+    height: 24px;
+  }
+  70% {
+    height: 47px;
+  }
+  80% {
+    height: 47px;
+  }
+  90% {
+    height: 77px;
+  }
+  100% {
+    height: 63px;
+  }
+}
+
+@keyframes grow19 {
+  0% {
+    height: 19px;
+  }
+  10% {
+    height: 47px;
+  }
+  20% {
+    height: 98px;
+  }
+  30% {
+    height: 57px;
+  }
+  40% {
+    height: 5px;
+  }
+  50% {
+    height: 1px;
+  }
+  60% {
+    height: 24px;
+  }
+  70% {
+    height: 47px;
+  }
+  80% {
+    height: 47px;
+  }
+  90% {
+    height: 77px;
+  }
+  100% {
+    height: 63px;
+  }
+}
+.bar:nth-child(20) {
+  background-color: gray;
+  -webkit-animation: grow20 1948ms alternate infinite;
+  animation: grow20 1948ms alternate infinite;
+}
+
+@-webkit-keyframes grow20 {
+  0% {
+    height: 41px;
+  }
+  10% {
+    height: 67px;
+  }
+  20% {
+    height: 4px;
+  }
+  30% {
+    height: 57px;
+  }
+  40% {
+    height: 85px;
+  }
+  50% {
+    height: 86px;
+  }
+  60% {
+    height: 2px;
+  }
+  70% {
+    height: 49px;
+  }
+  80% {
+    height: 93px;
+  }
+  90% {
+    height: 42px;
+  }
+  100% {
+    height: 72px;
+  }
+}
+
+@keyframes grow20 {
+  0% {
+    height: 41px;
+  }
+  10% {
+    height: 67px;
+  }
+  20% {
+    height: 4px;
+  }
+  30% {
+    height: 57px;
+  }
+  40% {
+    height: 85px;
+  }
+  50% {
+    height: 86px;
+  }
+  60% {
+    height: 2px;
+  }
+  70% {
+    height: 49px;
+  }
+  80% {
+    height: 93px;
+  }
+  90% {
+    height: 42px;
+  }
+  100% {
+    height: 72px;
+  }
+}
